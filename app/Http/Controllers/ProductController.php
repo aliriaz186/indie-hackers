@@ -103,6 +103,19 @@ class ProductController extends Controller
         return view('dashboard.edit-product')->with(['products' => $products, 'productId' => $productId, 'logo' => $logo, 'productDetails' => $productDetails]);
     }
 
+    public function detailProductInfo($productId)
+    {
+        $products = Product::where('id', $productId)->first();
+        if (ProductDetailTable::where('product_id', $productId)->exists()) {
+            $logo = ProductDetailTable::where('product_id', $productId)->first()['logo'];
+            $productDetails = ProductDetailTable::where('product_id', $productId)->first();
+        } else {
+            $logo = '';
+            $productDetails = '';
+        }
+        return view('dashboard.details-product')->with(['products' => $products, 'productId' => $productId, 'logo' => $logo, 'productDetails' => $productDetails]);
+    }
+
     public function updateLogo(Request $request)
     {
         if (ProductDetailTable::where('product_id', $request->productId)->exists()) {

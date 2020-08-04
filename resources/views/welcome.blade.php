@@ -35,42 +35,107 @@
                     </svg>
                 </button>
             </div>
-            <div class="container header-container">
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-8">
-                    <div class="d-flex flex-wrap">
-                        <div
-                                style="padding: 50px; background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 17px; width: 500px">
-                            <div class="d-flex">
-                                <div style="margin-right: 13px;">
-                                    <img src="{{asset('img/project.svg')}}"
-                                         style="border-radius: 50%; height: 100px; width: 100px">
-                                </div>
-                                <div style="margin-top: 12px">
-                                    <h3 style="color: white">Gyro</h3>
-                                    <p style="color: #9cb3c9; font-size: 12px">Complete Financial Management System</p>
-                                </div>
+            <div class="container">
+                <div class="row" style="">
+                    <div class="col-lg-4" style="height: 700px!important;margin-top: 0px!important;padding: 10px; ">
+                        <div style="cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Sort By</h3>
                             </div>
-                            <h4 style="margin-top: 10px;color: white;">$50/month</h4>
-                            <p style="color: #9cb3c9;">self-reported revenue</p>
                         </div>
-                        <div style="padding: 50px; margin-top : 20px; background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 17px; width: 500px">
-                            <div class="d-flex">
-                                <div style="margin-right: 13px;">
-                                    <img src="{{asset('img/project.svg')}}"
-                                         style="border-radius: 50%; height: 100px; width: 100px">
-                                </div>
-                                <div style="margin-top: 12px">
-                                    <h3 style="color: white">FyreStream</h3>
-                                    <p style="color: #9cb3c9; font-size: 12px">Complete Social Media System</p>
-                                </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Categories</h3>
                             </div>
-                            <h3 style="margin-top: 10px;color: white;">$100/month</h3>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Revenue</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Search</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Founders</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Employees</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Funding</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Location</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Platform</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Customers</h3>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 14px;padding: 20px">
+                            <div>
+                                <h3 style="color: white">Tech Skills</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="d-flex flex-wrap">
+                            @foreach($products as $product)
+                                <div onclick="location.href = `{{env('APP_URL')}}/product/{{$product->id}}/details`" style=";margin-top : 10px;padding: 50px; cursor: pointer;background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 17px; width: 500px">
+                                    <div class="d-flex">
+                                        <div style="margin-right: 13px;">
+                                            @if(empty($product->logo))
+                                                <img src="{{asset('img/project.svg')}}"
+                                                     style="border-radius: 50%; height: 100px; width: 100px">
+                                            @else
+                                                <img src="{{asset('product-logo')}}/{{$product->logo}}"
+                                                     style="border-radius: 50%; height: 100px; width: 100px">
+                                            @endif
+                                        </div>
+                                        <div style="margin-top: 12px">
+                                            <h3 style="color: white">{{$product->name}}</h3>
+                                            <p style="color: #9cb3c9; font-size: 12px">{{$product->description}}</p>
+                                        </div>
+                                    </div>
+                                    <h4 style="margin-top: 10px;color: white;">$50/month</h4>
+                                    <p style="color: #9cb3c9;">self-reported revenue</p>
+                                </div>
+                            @endforeach
+
+                            {{--                        <div style="padding: 50px; margin-top : 20px; background-color: #274059; box-shadow: 0 0 8px #0c1f31; border-radius: 3px;font-size: 17px; width: 500px">--}}
+                            {{--                            <div class="d-flex">--}}
+                            {{--                                <div style="margin-right: 13px;">--}}
+                            {{--                                    <img src="{{asset('img/project.svg')}}"--}}
+                            {{--                                         style="border-radius: 50%; height: 100px; width: 100px">--}}
+                            {{--                                </div>--}}
+                            {{--                                <div style="margin-top: 12px">--}}
+                            {{--                                    <h3 style="color: white">FyreStream</h3>--}}
+                            {{--                                    <p style="color: #9cb3c9; font-size: 12px">Complete Social Media System</p>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
+                            {{--                            <h3 style="margin-top: 10px;color: white;">$100/month</h3>--}}
+                            {{--                        </div>--}}
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
+
         </div>
         <hr style="line-height: 5px; color: grey">
     </div>

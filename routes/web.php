@@ -1,5 +1,6 @@
 <?php
 
+use App\ProductDetailTable;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,11 @@ Route::post('kit/{url}/product/files/save',"ProductController@saveFile");
 Route::post('kit/{url}/company/get',"CompanyController@index");
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = \App\Product::all();
+    foreach ($products as $product){
+        $product->logo = ProductDetailTable::where('product_id', $product->id)->first()['logo'];
+    }
+    return view('welcome')->with(['products' => $products]);
 });
 Route::get('/login', function () {
     return view('auth/login');
@@ -38,6 +43,7 @@ Route::get('new-product', "ProductController@newProduct");
 Route::get('profile', "ProductController@getProfileAndProducts");
 Route::post('products/save', "ProductController@saveProductInfo");
 Route::get('edit/product/{productId}', "ProductController@editProductInfo");
+Route::get('product/{productId}/details', "ProductController@detailProductInfo");
 Route::post('logo/update', "ProductController@updateLogo");
 Route::post('products/details/save', "ProductController@saveProductDetails");
 Route::get('get/tagsData/{productId}', "ProductController@getTags");
