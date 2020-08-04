@@ -37,3 +37,10 @@ Route::get('/signup', function () {
 Route::get('new-product', "ProductController@newProduct");
 Route::get('profile', "ProductController@getProfileAndProducts");
 Route::post('products/save', "ProductController@saveProductInfo");
+Route::get('edit/product/{productId}', "ProductController@editProductInfo");
+Route::post('logo/update', "ProductController@updateLogo");
+Route::post('products/details/save', "ProductController@saveProductDetails");
+Route::get('get/tagsData/{productId}', "ProductController@getTags");
+Route::get('get/platforms/{productId}', "ProductController@getPlatforms");
+Route::get('get/funding/{productId}', "ProductController@getFunding");
+Route::get('get/business/model/{productId}', "ProductController@getBusiness");

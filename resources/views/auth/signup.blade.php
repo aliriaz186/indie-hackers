@@ -1,5 +1,15 @@
 @extends('dashboard.layout')
 @section('content')
+    <style>
+        .hover-class{
+            background-color: #4799eb;
+            color: white!important;
+            padding: 10px!important;
+        }
+        .hover-class:hover{
+            background-color:deeppink;!important;
+        }
+    </style>
 <div  style="color: white">
     <div>
         <div class="container ">
@@ -22,7 +32,7 @@
                     <input type="password" class="form-control" id="password">
                 </div>
                 <div class="learn-more-btn-section" style="margin-top: 10px" onclick="signup()">
-                    <button class="btn btn-modern">SIGNUP</button>
+                    <button class="btn hover-class">SIGNUP</button>
                 </div>
             </div>
         </div>
