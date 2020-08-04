@@ -221,6 +221,7 @@ class ProductController extends Controller
             $productDetails->end_date_month = $request->endMonth;
             $productDetails->end_date_year = $request->endYear;
             $productDetails->location = $request->location;
+            $productDetails->product_id = $request->productId;
             $productDetails->save();
             return json_encode(['status' => true]);
         }
