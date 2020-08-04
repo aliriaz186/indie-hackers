@@ -28,7 +28,7 @@
                             <td>{{$key + 1}}</td>
                             <td>{{$product->name}}</td>
                             <td><a href="{{$product->url}}" target="_blank" style="color: white!important;">{{$product->url}}</a></td>
-                            <td><button class="btn btn-modern">Edit</button></td>
+                            <td><a class="btn btn-modern" href="{{URL::to('')}}/edit/product/{{$product->id}}">Edit</a></td>
                         </tr>
                      @endforeach
                     </tbody>

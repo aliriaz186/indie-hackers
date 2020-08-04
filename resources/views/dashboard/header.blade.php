@@ -11,8 +11,15 @@
     <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('popper/popper.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('bootstrap.min.js')}}"></script>
-<body style="background-color: #1f364d">
-<nav class="navbar navbar-expand-lg" style="padding: 5px!important;box-shadow: 0 2px 4px -1px rgb(31,54,77);padding-top: 0.3rem!important;;padding-bottom: 0.3rem!important; background-color: #1f364d">
+    <style>
+        .hover-class{
+            background-color: #4799eb;
+            color: white!important;
+        }
+    </style>
+</head>
+<body style="background-color: #0e2439">
+<nav class="navbar navbar-expand-lg" style="padding: 5px!important;box-shadow: 0 2px 4px -1px rgb(31,54,77);padding-top: 0.3rem!important;;padding-bottom: 0.3rem!important; background-color: #0e2439">
     <a class="navbar-brand ml-4" href="{{url('/')}}" ><img style="width: 50px; height: 50px; color: white" src="{{asset('landing-page-styles/images/logo.svg')}}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,10 +41,10 @@
 {{--               style="padding-top: 1px!important;padding-bottom: 1px!important; padding-right: 12px!important;padding-left: 12px!important;font-size: medium;"--}}
 {{--               onclick="logout()">Logout</a>--}}
             @if(empty(\Illuminate\Support\Facades\Session::get('userId')))
-            <button class="btn btn-modern" onclick="location.href = `{{env('APP_URL')}}/login`">
+            <button class="btn hover-class" onclick="location.href = `{{env('APP_URL')}}/login`">
                 LOGIN
             </button>
-            <button class="btn btn-modern ml-2" onclick="location.href = `{{env('APP_URL')}}/signup`">
+            <button class="btn hover-class ml-2"  onclick="location.href = `{{env('APP_URL')}}/signup`">
                 SIGNUP
             </button>
             @else

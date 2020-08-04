@@ -1,5 +1,15 @@
 @extends('dashboard.layout')
 @section('content')
+    <style>
+        .hover-class{
+            background-color: #4799eb;
+            color: white!important;
+            padding: 10px!important;
+        }
+        .hover-class:hover{
+            background-color:deeppink;!important;
+        }
+    </style>
 <div style="color: white">
     <div>
         <div class="container">
@@ -15,7 +25,7 @@
                 </div>
 
                 <div class="learn-more-btn-section" style="margin-top: 10px" onclick="login()">
-                    <button class="btn btn-modern">LOGIN</button>
+                    <button class="btn hover-class">LOGIN</button>
                 </div>
             </div>
         </div>
